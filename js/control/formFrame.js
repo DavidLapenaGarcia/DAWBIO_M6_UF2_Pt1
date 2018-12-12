@@ -1,4 +1,37 @@
 /*
+@name        = $(document).ready()
+@author      = David Lapena Garcia
+@version     = 1.0
+@description = Makes changes at the time of loading the page.
+@date        = 10-12-2018
+@params      = none
+@return      = none
+*/
+$( document ).ready(function() {
+    
+    /*
+    @name        = $("#buttonForm").clik()
+    @author      = David Lapena Garcia
+    @version     = 1.0
+    @description = Prevent the defult values on form tag and call the function
+    @date        = 10-12-2018
+    @params      = none
+    @return      = none
+    */
+    $("#register").click(function(){
+        console.log("ok, register cliked");
+        event.preventDefault();
+        register( $("#Dna").val().toUpperCase() );
+    });
+	$("#toChromosome").click(function(){
+        console.log("ok, toChromosome cliked");
+        event.preventDefault();
+        toChromosome();
+    })
+});
+
+
+/*
 @name= register
 @author= David Lapena Garcia
 @version= 1.0
@@ -9,13 +42,13 @@ If it is not, notifies the user.
 @params= none
 @return = none
 */
-function register(){
-  var dna = $("#Dna").val().toUpperCase();
+function register(dna){
   if(validateDna(dna) === null){
   	$("#messageToUser").html(dna+" is correct");
   	confirmRegister();
   }else{
-  	$("#messageToUser").html("There is an error in your DNA code:   ("+dna+")</br> ERROR: "+validateDna(dna));
+	$("#messageToUser").html("This DNA code is no valid: [ "+dna+"]");
+  	$("#messageError").html("ERROR: "+validateDna(dna));
   }
 };
 
@@ -24,14 +57,13 @@ function register(){
 @author= David Lapena Garcia
 @version= 1.0
 @description = This function validates a correct dna sentence.
-First, transforms the sentence to upper case.
-Next, validates a not numeric data, an string data, not empty data, a length enough data, and a correct DNA parameter.
+Validates a not numeric data, an string data, not empty data, a length enough data, and a correct DNA parameter.
 @date = 1-12-2018
 @params= dna
 @return = null if correct. String wicth the error if not.
 */
 function validateDna(dna){
-	dna= dna.toUpperCase();
+	//dna = dna.toUpperCase();  // why today this breaks? 
 	var result=null;
 	var adnRegExp = new RegExp("[^ACGT]","i");
 	if($.isNumeric(dna)){
@@ -67,7 +99,7 @@ function confirmRegister() {
 	        return false;
 	    }
 	}
-}
+};
 
 /*
 @name= mayus
@@ -80,20 +112,22 @@ function confirmRegister() {
 */
 function mayus(e) {
     e.value = e.value.toUpperCase();
-}
+};
 
 /*
-@name= ToChromosome
+@name= toChromosome
 @author= David Lapena Garcia
 @version= 1.0
-@description = This function resets the input value and call a function for return to the frame[0]
+@description = This function resets the page content modified and call a function for return to the frame[0]
 @date = 1-12-2018
 @params= none
 @return = none
 */
-function ToChromosome(){
+function toChromosome(){
 	$("#Dna").val("");
-	FormToChromosomeFrame();
+	$("#messageToUser").html("");
+	$("#messageError").html("");
+	formToChromosomeFrame();
 };
 
 /*
@@ -105,7 +139,7 @@ function ToChromosome(){
 @params= none
 @return = none
 */
-function FormToChromosomeFrame(){
+function formToChromosomeFrame(){
 	window.parent.$("#FormFrame").hide();
   	window.parent.$("#ChromosomeFrame").show();
   

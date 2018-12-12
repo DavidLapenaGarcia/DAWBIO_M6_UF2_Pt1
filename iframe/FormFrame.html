@@ -22,13 +22,16 @@
         </div>
       </div>
       <div>
-        <div style="margin:25px;" class="form-group" >
-          <label><b>Introduce the DNA Code </b> </label>
-          <input class="form-control" type="text" id="Dna" onkeyup="mayus(this);"><br>
-          <a id="messageToUser"></a></br>
-          <button class="btn btn-primary" onclick="register()"> Register analysis </button>
-          <button class="btn btn-primary" onclick="ToChromosome()"> Back </button>
-        </div>
+        <form>
+          <div style="margin:25px;" class="form-group" >
+              <label><b>Introduce the DNA Code </b> </label>
+              <input class="form-control" type="text" id="Dna" onkeyup="mayus(this);"><br>
+              <p id="messageToUser"></p>
+              <p id="messageError" class="text-danger"></p>
+              <button type="submit" id="register" class="btn btn-primary"> Register analysis </button>
+              <button type="submit" id="toChromosome" class="btn btn-primary"> Back </button>
+          </div>
+        </form>
       </div>
     </div>
   </body>
