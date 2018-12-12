@@ -2,19 +2,18 @@
 @name        = $(document).ready()
 @author      = David Lapena Garcia
 @version     = 1.0
-@description = Makes changes at the time of loading the page.
-@date        = 10-12-2018
+@description = Makes changes at the time of loading the frame[1].
+@date        = 12-12-2018
 @params      = none
 @return      = none
 */
 $( document ).ready(function() {
-    
     /*
     @name        = $("#buttonForm").clik()
     @author      = David Lapena Garcia
     @version     = 1.0
-    @description = Prevent the defult values on form tag and call the function
-    @date        = 10-12-2018
+    @description = Prevent the defult events inculdes on form tag and call the function
+    @date        = 12-12-2018
     @params      = none
     @return      = none
     */
@@ -38,7 +37,7 @@ $( document ).ready(function() {
 @description = First, check if the data given by the user is correct.
 If is correct, call to confirm the registraion.
 If it is not, notifies the user.
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */
@@ -58,7 +57,7 @@ function register(dna){
 @version= 1.0
 @description = This function validates a correct dna sentence.
 Validates a not numeric data, an string data, not empty data, a length enough data, and a correct DNA parameter.
-@date = 1-12-2018
+@date = 12-12-2018
 @params= dna
 @return = null if correct. String wicth the error if not.
 */
@@ -84,8 +83,8 @@ function validateDna(dna){
 @name= confirmRegister
 @author= David Lapena Garcia
 @version= 1.0
-@description = This function confirms the registration by the user.
-@date = 1-12-2018
+@description = This function ask to confirms the registration by the user.
+@date = 12-12-2018
 @params= dna
 @return = null if correct. String wicth the error if not.
 */
@@ -102,24 +101,11 @@ function confirmRegister() {
 };
 
 /*
-@name= mayus
-@author= David Lapena Garcia
-@version= 1.0
-@description = Transforms all the given values to upper case.
-@date = 1-12-2018
-@params = e string
-@return = none
-*/
-function mayus(e) {
-    e.value = e.value.toUpperCase();
-};
-
-/*
 @name= toChromosome
 @author= David Lapena Garcia
 @version= 1.0
-@description = This function resets the page content modified and call a function for return to the frame[0]
-@date = 1-12-2018
+@description = This function resets the modified page content  and call a function to return to the frame[0]
+@date = 12-12-2018
 @params= none
 @return = none
 */
@@ -134,8 +120,8 @@ function toChromosome(){
 @name= FormToChromosomeFrame
 @author= David Lapena Garcia
 @version= 1.0
-@description = Hide the Chromosome-frame and shows the Form-frame in the parent window.
-@date = 1-12-2018
+@description = Hide the frame[1] and shows the frame[0] in the parent window.
+@date = 12-12-2018
 @params= none
 @return = none
 */
@@ -143,4 +129,18 @@ function formToChromosomeFrame(){
 	window.parent.$("#FormFrame").hide();
   	window.parent.$("#ChromosomeFrame").show();
   
+};
+
+
+/*
+@name= mayus
+@author= David Lapena Garcia
+@version= 1.0
+@description = Transforms all the given values to upper case at the moment when user writes.
+@date = 12-12-2018
+@params = e string
+@return = none
+*/
+function mayus(e) {
+    e.value = e.value.toUpperCase();
 };
