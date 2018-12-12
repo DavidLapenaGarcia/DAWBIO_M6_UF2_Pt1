@@ -4,7 +4,7 @@
 @version= 1.0
 @description = Starts the app. First, shows the correct frame and hides the others
 Then, makes the logo dance.
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */
@@ -18,7 +18,7 @@ $(document).ready(function (){
 @author= David Lapena Garcia
 @version= 1.0
 @description = Hides the Form-frame and shows the Chromosome-rame
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */
@@ -31,7 +31,7 @@ function FormToChromosomeFrame(){
 @author= David Lapena Garcia
 @version= 1.0
 @description = Makes the logo dance.
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */

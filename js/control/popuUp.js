@@ -3,7 +3,7 @@
 @author= David Lapena Garcia
 @version= 1.0
 @description = Starts the popup charging the needed data.
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */
@@ -16,7 +16,7 @@ $(document).ready(function (){
 @author= David Lapena Garcia
 @version= 1.0
 @description = Charge the needed data from the opener windows.
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */

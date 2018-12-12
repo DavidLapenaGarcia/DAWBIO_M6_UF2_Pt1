@@ -5,7 +5,7 @@
 @description = Starts the frame.
  On click an image, it sends the attr("alt") to the #chrNumber in index/frame[1].
  Next, it redirects to the frame [1].
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */
@@ -21,7 +21,7 @@ $(document).ready(function (){
 @author= David Lapena Garcia
 @version= 1.0
 @description = Get the cliked crhomosome number by the user, and sends the attr value to the index/frame[1].
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */
@@ -35,7 +35,7 @@ function chromosomeCliked(clicked){
 @author= David Lapena Garcia
 @version= 1.0
 @description = Hide the Chromosome-frame ans shows the Form-frame.
-@date = 1-12-2018
+@date = 12-12-2018
 @params= none
 @return = none
 */
