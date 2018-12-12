@@ -3,13 +3,16 @@
 @author= David Lapena Garcia
 @version= 1.0
 @description = Starts the frame.
+ On click an image, it sends the attr("alt") to the #chrNumber in index/frame[1].
+ Next, it redirects to the frame [1].
 @date = 1-12-2018
 @params= none
 @return = none
 */
 $(document).ready(function (){
 	$("img").click(function(event){
-		chromosomeCliked();
+		chromosomeCliked( $(this) );
+		ChromosomeToFormFrame();
 	});
 });
 
@@ -17,15 +20,14 @@ $(document).ready(function (){
 @name= chromosomeCliked
 @author= David Lapena Garcia
 @version= 1.0
-@description = Get the cliked crhomosome number by the user and call to redirect to the form-frame.
+@description = Get the cliked crhomosome number by the user, and sends the attr value to the index/frame[1].
 @date = 1-12-2018
 @params= none
 @return = none
 */
-function chromosomeCliked(){
-  var crhomNum = $(this).attr("alt")
+function chromosomeCliked(clicked){
+  	var crhomNum = clicked.attr("alt");
 	window.parent.frames[1].$("#crhNumber").html(crhomNum);
-	ChromosomeToFormFrame();
 };
 
 /*
